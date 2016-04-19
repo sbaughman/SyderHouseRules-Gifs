@@ -63,7 +63,6 @@ class GifsController < ApplicationController
     else
       @scope = Gif
     end
-    @scope
   end
 
 end

@@ -54,7 +54,7 @@ class GifsController < ApplicationController
   private
 
   def gif_params
-    params.require(:gif).permit(:url, :description, :tag_list)
+    params.require(:gif).permit(:url, :description, :tag_list, :gif_image)
   end
 
   def set_scope

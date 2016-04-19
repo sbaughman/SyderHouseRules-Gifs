@@ -2,6 +2,6 @@
   <%= f.input :url %>
   <%= f.input :description %>
   <%= f.input :tag_list, placeholder: "Tags start with '#' and are separated by commas. Ex - #fun, #awesome" %>
-  <%= f.attachment_field :gif_image %>
+  <%= f.attachment_field :gif_image, direct: true %>
   <%= f.button :submit %>
 <% end %>

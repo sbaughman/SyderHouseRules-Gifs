@@ -35,7 +35,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem 'refile-postgres'
-gem 'remotipart', '~> 1.2'
+gem 'remotipart'
 gem "figaro"
 
 gem 'rails_12factor', group: :production

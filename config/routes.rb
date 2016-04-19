@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   root   'gifs#index'
   get    '/login'       => 'sessions#new', as: :login
   post   '/login'       => 'sessions#create', as: :login_create
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
 
 
   resources :gifs
-  resources :users
+
 
 
 end

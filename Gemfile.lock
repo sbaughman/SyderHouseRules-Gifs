@@ -238,7 +238,7 @@ DEPENDENCIES
   refile
   refile-mini_magick
   refile-postgres
-  remotipart (~> 1.2)
+  remotipart
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form

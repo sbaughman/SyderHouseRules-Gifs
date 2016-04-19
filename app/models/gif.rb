@@ -3,6 +3,7 @@ class Gif < ActiveRecord::Base
   acts_as_taggable
   paginates_per 30
   belongs_to :user
+  attachment :gif_image
   validates :url, :description, presence: true
   validates :url, length: { minimum: 12, too_short: "not long enough" }
   validates :url, uniqueness: true

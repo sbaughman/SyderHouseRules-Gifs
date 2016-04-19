@@ -6,9 +6,9 @@ class Gif < ActiveRecord::Base
   attachment :gif_image, content_type: ["image/gif"]
   validates :description, presence: true
   validates :url, length: { minimum: 12, too_short: "not long enough" }, allow_blank: true
-  validates :url, uniqueness: true, allow_blank: true
-  validates :url, format: { with: /\Ahttps?:\/\// }, allow_blank: true
-  validates :url, format: { with: /.gif\Z/ }, allow_blank: true
+  validates :url, uniqueness: { message: "url already exists"}, allow_blank: true
+  validates :url, format: { with: /\Ahttps?:\/\//, message: "must start with http:\\\\ or https:\\\\" }, allow_blank: true
+  validates :url, format: { with: /.gif\Z/, message: "must be a .gif" }, allow_blank: true
   validate :has_either_url_or_image
 
   scope :by_score, -> { joins("LEFT OUTER JOIN votes ON gifs.id = votes.voteable_id AND votes.voteable_type = 'Gif'").
@@ -20,7 +20,7 @@ class Gif < ActiveRecord::Base
 
   def has_either_url_or_image
     unless url.blank? ^ gif_image.blank?
-      errors.add(:base, "Specify a url or upload an image, not both")
+      errors.add(:url, "Specify a url or upload an image")
     end
   end
 

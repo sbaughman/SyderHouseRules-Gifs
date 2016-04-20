@@ -16,17 +16,17 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li>
-          <%= link_to "New Gif", new_gif_path, class: "page-scroll", data: { toggle: "modal", target: "#main_modal", remote: true } %>
+          <%= link_to "New Gif", new_gif_path, data: { toggle: "modal", target: "#main_modal", remote: true } %>
           </li>
           <li>
-            <%= link_to "Log Out", logout_path, class: "page-scroll", remote: true %>
+            <%= link_to "Log Out", logout_path, remote: true %>
           </li>
         <% else %>
           <li>
-            <%= link_to "Log In", login_path, class: "page-scroll", data: { toggle: "modal", target: "#main_modal", remote: true } %>
+            <%= link_to "Log In", login_path, data: { toggle: "modal", target: "#main_modal", remote: true } %>
           </li>
           <li>
-            <%= link_to "Sign Up", new_user_path, class: "page-scroll", data: { toggle: "modal", target: "#main_modal", remote: true } %>
+            <%= link_to "Sign Up", new_user_path, data: { toggle: "modal", target: "#main_modal", remote: true } %>
           </li>
         <% end %>
       </ul>
